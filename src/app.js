@@ -36,7 +36,7 @@ class App extends React.Component {
     const newStreams = diff(prevStreams, streams);
     let client;
     for (let i = 0; i < newStreams.length; i++) {
-      client = new WebSocket(`ws://${HOST}/video/out/${newStreams[i]}`);
+      client = new WebSocket(`wss://${HOST}/video/out/${newStreams[i]}`);
       this.players[newStreams[i]] = {
         client,
         player: new jsmpeg(client, { canvas: this.refs[`video${newStreams[i]}`] })
