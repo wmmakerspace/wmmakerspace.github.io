@@ -1,0 +1,43 @@
+{
+  "name": "wmmakerspace.github.io",
+  "version": "1.0.0",
+  "description": "Audio/Video system for William & Mary's makerspaces",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify --transform [ babelify --presets [ es2015 react ] ] --debug -p [ minifyify --map bundle.map.json --output bundle.map.json ] index.js -o bundle.js",
+    "start": "budo ./index.js --serve=bundle.js --live --open -- -t [ babelify --presets [ es2015 react ] ] | garnish",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wmmakerspace/wmmakerspace.github.io.git"
+  },
+  "author": "Kelvin Abrokwa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wmmakerspace/wmmakerspace.github.io/issues"
+  },
+  "homepage": "https://github.com/wmmakerspace/wmmakerspace.github.io#readme",
+  "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
+    "budo": "^9.0.0",
+    "eslint": "^3.4.0",
+    "eslint-config-airbnb": "^10.0.1",
+    "eslint-plugin-import": "^1.14.0",
+    "eslint-plugin-jsx-a11y": "^2.2.0",
+    "eslint-plugin-react": "^6.1.2",
+    "garnish": "^5.2.0",
+    "minifyify": "^7.3.3",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2"
+  },
+  "dependencies": {
+    "jsmpeg": "^1.0.0"
+  }
+}
