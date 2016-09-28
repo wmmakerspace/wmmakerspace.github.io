@@ -23,7 +23,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`http://${HOST}/video/list`)
+    fetch(`https://${HOST}/video/list`)
       .then(res => res.json())
       .then(streams => {
         this.setState({ streams });
